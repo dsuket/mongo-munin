@@ -33,8 +33,7 @@ name = "locked"
 def doData():
     status = getServerStatus()
     if status["version"] >= "2.2.0":
-        ratio = long(status["globalLock"]["lockTime"]["$numberLong"]) / long(status["globalLock"]["totalTime"]["$numberL
-ong"])
+        ratio = long(status["globalLock"]["lockTime"]["$numberLong"]) / long(status["globalLock"]["totalTime"]["$numberLong"])
     else:
         ratio = status["globalLock"]["ratio"]
     print name + ".value " + str(100 * ratio)
